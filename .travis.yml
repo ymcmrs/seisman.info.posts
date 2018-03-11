@@ -6,6 +6,7 @@ env:
 branches:
   only:
     - master
+    - dev
 
 before_install:
   - cd ..
