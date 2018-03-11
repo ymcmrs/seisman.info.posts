@@ -30,3 +30,6 @@ deploy:
   skip_cleanup: true
   github_token: ${GH_TOKEN}
   local_dir: ../blog.seisman.info/public
+  verbose: true
+  on:
+    branch: dev
