@@ -14,12 +14,14 @@ before_install:
   - git submodule update --init --recursive --remote
 
 install:
+  - pwd
   # install latest hugo
   - wget https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_Linux-64bit.tar.gz
   - tar -xvf hugo_${HUGO_VERSION}_Linux-64bit.tar.gz hugo
   - pip install pygments
 
 script:
+  - pwd
   - ./hugo
 
 deploy:
