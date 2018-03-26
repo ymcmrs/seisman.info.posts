@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>SeisMan博客 - SeisMan</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="[seisman](http://seisman.info)" />
+  <meta name="description" content="地震学基础 基础知识 体力与等效体力 地震学中的坐标系 地震学断层的定义 标量矩与矩震级转换关系 辐射花样的计算与震源球的绘制 慢度与射线参数 震相走时的计" />
+
+  <meta name="keywords" content="地球物理学, 地震学, SAC, 软件, 开源" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.37.1" />
+
+
+<link rel="canonical" href="http://blog.seisman.info/README/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+<link href="/dist/even.min.css?v=3.0.1" rel="stylesheet">
+<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+
+
+
+<meta property="og:title" content="SeisMan博客" />
+<meta property="og:description" content="地震学基础 基础知识 体力与等效体力 地震学中的坐标系 地震学断层的定义 标量矩与矩震级转换关系 辐射花样的计算与震源球的绘制 慢度与射线参数 震相走时的计" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://blog.seisman.info/README/" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="SeisMan博客">
+<meta itemprop="description" content="地震学基础 基础知识 体力与等效体力 地震学中的坐标系 地震学断层的定义 标量矩与矩震级转换关系 辐射花样的计算与震源球的绘制 慢度与射线参数 震相走时的计">
+
+
+
+<meta itemprop="wordCount" content="1498">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="SeisMan博客"/>
+<meta name="twitter:description" content="地震学基础 基础知识 体力与等效体力 地震学中的坐标系 地震学断层的定义 标量矩与矩震级转换关系 辐射花样的计算与震源球的绘制 慢度与射线参数 震相走时的计"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">SeisMan</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">首页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/links/">
+        <li class="mobile-menu-item">链接</li>
+      </a><a href="/collections/">
+        <li class="mobile-menu-item">合集</li>
+      </a><a href="/donations/">
+        <li class="mobile-menu-item">捐赠</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">关于</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">SeisMan</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">首页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">归档</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">分类</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/links/">链接</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/collections/">合集</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/donations/">捐赠</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">关于</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+  <div class="post-content">
+      
+
+<h1 id="地震学基础">地震学基础</h1>
+
+<h2 id="基础知识">基础知识</h2>
+
+<ul>
+<li><a href="/post/2013-09-16-body-force-equivalents.md">体力与等效体力</a></li>
+<li><a href="/post/2017-01-12-coordinate-systems-in-seismology.md">地震学中的坐标系</a></li>
+<li><a href="/post/2013-09-26-faults-in-seismology.md">地震学断层的定义</a></li>
+<li><a href="/post/2013-07-02-scalar-moment-and-moment-magnitude.md">标量矩与矩震级转换关系</a></li>
+<li><a href="/post/2014-05-01-radiation-pattern-and-beach-ball.md">辐射花样的计算与震源球的绘制</a></li>
+<li><a href="/post/2015-02-05-slowness-and-ray-parameter.md">慢度与射线参数</a></li>
+<li><a href="/post/2015-05-02-traveltime-calculation.md">震相走时的计算</a></li>
+<li><a href="/post/2015-05-15-tau-integral-in-spherical-earth.md">球状模型下的 Tau 积分</a></li>
+</ul>
+
+<h2 id="仪器响应">仪器响应</h2>
+
+<ul>
+<li><a href="/post/2013-06-23-instrumental-response.md">地震学的仪器响应</a></li>
+<li><a href="/post/2013-06-26-instrumental-response-physical-details.md">仪器响应的物理细节</a></li>
+<li><a href="/post/2013-06-27-instrumental-response-resp.md">仪器响应文件 RESP</a></li>
+<li><a href="/post/2013-06-28-instrumental-response-sacpz.md">仪器响应文件 SAC PZ</a></li>
+<li><a href="/post/2013-06-29-resp-sacpz-difference.md">用 RESP 和 PZ 去除仪器响应的差别</a></li>
+<li><a href="/post/2013-06-30-instrumental-response-details.md">仪器响应实例分析</a></li>
+<li><a href="/post/2014-01-16-how-to-choose-freqlimits.md">freqlimits 的选取</a></li>
+</ul>
+
+<h1 id="地震学软件">地震学软件</h1>
+
+<h2 id="taup-toolkit">TauP</h2>
+
+<ul>
+<li><a href="/post/2014-03-29-traveltime-packages.md">走时计算软件包</a></li>
+<li><a href="/post/2013-07-10-taup.md">走时计算软件TauP</a></li>
+<li><a href="/post/2014-10-08-taup-install.md">TauP 的安装</a></li>
+<li><a href="/post/2014-11-07-taup-calculate-pierce-points.md">利用 TauP 计算射线穿透点</a></li>
+<li><a href="/post/2014-11-10-taup-mark-traveltime.md">利用 TauP 为 SAC 文件标记理论到时</a></li>
+<li><a href="/post/2015-01-24-taup-calculate-traveltime.md">用 taup_time 计算震相走时及射线信息</a></li>
+<li><a href="/post/2016-05-21-taup-custom-models.md">TauP 自定义模型</a></li>
+<li><a href="/post/2016-05-22-taup-identify-multiple-P-phases.md">识别 TauP 输出中的多个 P 震相</a></li>
+<li><a href="/post/2017-03-31-taup-calculate-underside-reflection-traveltime.md">计算任意深度处下表面反射波走时</a></li>
+</ul>
+
+<h2 id="sac">SAC</h2>
+
+<ul>
+<li><a href="/post/2013-07-06-sac-manual.md">SAC 参考手册中文版</a></li>
+<li><a href="/post/2016-02-19-faster-ppk.md">用 SAC 快速拾取震相</a></li>
+<li><a href="/post/2016-07-19-sacio-fortran90.md">SAC 文件读写模块 sacio_Fortran</a></li>
+<li><a href="/post/2013-08-03-calculate-gcarc-after-adding-event-location.md">SAC 文件修改事件经纬度后震中距的自动计算</a></li>
+<li><a href="/post/2013-08-04-conversion-of-different-sac-formats.md">SAC 不同格式间的转换</a></li>
+<li><a href="/post/2013-12-26-sac-display-copyright.md">脚本中调用 SAC 时不显示版本信息</a></li>
+<li><a href="/post/2014-06-15-change-background-color-of-window-in-sac.md">SAC 修改绘图窗口的背景色</a></li>
+<li><a href="/post/2015-06-19-convert-seed-to-sac.md">SEED 格式转 SAC 格式</a></li>
+<li><a href="/post/2016-01-12-sac-convert-displacement-to-velocity.md">SAC 中将位移记录转换成速度记录</a></li>
+<li><a href="/post/2013-08-20-ppk-notes.md">PPK 标记震相到时的一些注意事项</a></li>
+<li><a href="/post/2016-03-13-instrumental-response-removed-or-not.md">判断 SAC 数据是否已去除仪器响应</a></li>
+</ul>
+
+<h2 id="gmt">GMT</h2>
+
+<ul>
+<li><a href="/post/2013-11-07-install-gmt4-under-linux.md">GMT 4.5.17 在 Linux 下的安装</a></li>
+<li><a href="/post/2015-09-05-install-gmt4-under-mac.md">GMT 4 在 Mac 下的安装</a></li>
+<li><a href="/post/2013-11-09-multiple-versions-of-gmt.md">GMT4 与 GMT5 双版本共存</a></li>
+<li><a href="/post/2014-12-10-how-to-use-gmt-under-windows.md">Windows 下使用 GMT 的正确姿势</a></li>
+<li><a href="/post/2014-05-13-gmt4-style-guide.md">GMT4 脚本风格指南</a></li>
+<li><a href="/post/2013-10-24-gmt-latex.md">在 GMT 中使用 LaTeX</a></li>
+<li><a href="/post/2014-04-26-mix-geographical-coordinate-with-cartesian-coordinate.md">GMT 绘制地理坐标与笛卡尔坐标混合体</a></li>
+<li><a href="/post/2014-05-21-plot-equal-distance-lines.md">等震中距线的绘制</a></li>
+<li><a href="/post/2014-06-12-double-y-axis-plot.md">GMT 绘制双 Y 轴</a></li>
+<li><a href="/post/2015-02-01-plot-multiple-lines-in-different-scales.md">不同比例尺曲线的画法</a></li>
+<li><a href="/post/2014-12-28-add-annotations-in-gmt.md">GMT 中添加注释和标注</a></li>
+<li><a href="/post/2015-03-11-change-orientation-of-y-axis-annotations.md">修改 Y 轴的坐标标注的方向</a></li>
+<li><a href="/post/2015-06-06-gmt5-custom-axes.md">GMT5 自定义坐标轴</a></li>
+<li><a href="/post/2015-07-15-axes-without-ticks.md">GMT 绘制无刻度轴</a></li>
+<li><a href="/post/2015-08-05-area-fill.md">GMT 区域填色</a></li>
+<li><a href="/post/2015-08-16-gmt-insert-map.md">GMT 绘制图中图</a></li>
+<li><a href="/post/2015-08-21-plot-fault-names.md">GMT 添加断层名</a></li>
+<li><a href="/post/2015-11-19-raypath-between-events-and-stations.md">绘制事件与台站间的连线</a></li>
+<li><a href="/post/2015-12-11-plot-specified-gridline-on-maps.md">在地图上绘制特定的经纬线</a></li>
+<li><a href="/post/2016-01-18-plot-lines-with-gradient-colors.md">绘制颜色渐变的线条</a></li>
+<li><a href="/post/2016-03-12-depth-profile-in-polar-coordinates.md">在极坐标下绘制深度剖面</a></li>
+<li><a href="/post/2013-10-30-coastline-clip.md">用海岸线裁剪区域</a></li>
+<li><a href="/post/2014-02-21-calculate-distance-to-coast.md">计算某点离海岸线的距离</a></li>
+<li><a href="/post/2015-04-08-profile-from-3d-data.md">从 3D 数据中截取剖面</a></li>
+<li><a href="/post/2015-10-10-points-inside-polygons.md">判断点在多边形内</a></li>
+</ul>
+
+<h2 id="pssac">pssac</h2>
+
+<ul>
+<li><a href="/post/2013-08-04-pssac-install.md">安装 pssac</a></li>
+<li><a href="/post/2015-07-17-pssac-notes.md">pssac 使用教程</a></li>
+<li><a href="/post/2015-07-18-plot-traces-on-maps.md">在地图上绘制波形</a></li>
+<li><a href="/post/2013-09-15-waveform-comparison-plot.md">绘制波形对比图</a></li>
+<li><a href="/post/2013-08-09-pssac2-install.md">pssac2 的安装</a></li>
+<li><a href="/post/2015-07-19-pssac2-notes.md">pssac2 使用教程</a></li>
+</ul>
+
+<h2 id="fk">fk</h2>
+
+<ul>
+<li><a href="/post/2013-09-01-fk-install.md">fk3.2 编译</a></li>
+<li><a href="/post/2015-02-28-fk-notes.md">fk 用法笔记</a></li>
+</ul>
+
+<h2 id="其他">其他</h2>
+
+<ul>
+<li><a href="/post/2013-09-08-hk-install.md">hk1.3 编译</a></li>
+<li><a href="/post/2013-08-27-mopad.md">MoPaD:地震矩绘制和分析工具</a></li>
+<li><a href="/post/2013-07-16-moment-tensor-to-double-couple.md">由矩张量计算双力偶断层参数</a></li>
+<li><a href="/post/2014-06-13-gcap-install.md">gCAP 的安装</a></li>
+<li><a href="/post/2013-07-03-calculate-dist-az-baz.md">震中距、方位角和反方位角的计算</a></li>
+<li><a href="/post/2013-07-19-jplotresp.md">JPlotResp：绘制地震仪器响应</a></li>
+<li><a href="/post/2013-11-29-ccp-install.md">CCP1.0 编译</a></li>
+<li><a href="/post/2014-01-01-cps330.md">CPS330 : Computer Programs in Seismology</a></li>
+<li><a href="/post/2015-05-12-cps330-install.md">CPS330 的安装</a></li>
+<li><a href="/post/2015-07-31-evt2sac-install.md">安装 evt2sac</a></li>
+<li><a href="/post/2014-10-07-rdseed-install.md">rdseed 的安装</a></li>
+<li><a href="/post/2015-10-13-rdseed-notes.md">rdseed 用法笔记</a></li>
+<li><a href="/post/2015-12-08-sofi2d-notes.md">SOFI2D 笔记</a></li>
+<li><a href="/post/2018-03-03-beachballs-on-google-earth.md">在Google Earth上绘制震源球</a></li>
+</ul>
+
+<h1 id="地球物理相关资源">地球物理相关资源</h1>
+
+<h2 id="hinet台网">Hinet台网</h2>
+
+<ul>
+<li><a href="/post/2014-08-25-hinet.md">日本高密度地震台网 Hi-net</a></li>
+<li><a href="/post/2014-08-27-hinet-continuous-waveform-data.md">Hi-net 连续波形数据</a></li>
+<li><a href="/post/2014-08-29-hinet-continuous-waveform-data-source-code.md">Hi-net 连续数据申请的源码分析</a></li>
+<li><a href="/post/2014-09-04-hinet-win32-format.md">Hi-net WIN32 格式</a></li>
+<li><a href="/post/2014-09-05-hinet-channel-table.md">Hi-net Channel Table 文件</a></li>
+<li><a href="/post/2014-09-06-hinet-instrumental-response.md">Hi-net 的仪器响应</a></li>
+<li><a href="/post/2014-09-07-hinet-win32tools.md">Hi-net win32tools</a></li>
+<li><a href="/post/2017-04-01-hinetpy.md">HinetPy: Hi-net 数据申请与处理模块</a></li>
+</ul>
+
+<h2 id="地震波形数据">地震波形数据</h2>
+
+<ul>
+<li><a href="/post/2015-10-27-seismic-waveform-data-request.md">地震数据申请</a></li>
+<li><a href="/post/2014-01-10-seismic-data-formats.md">地震波形数据格式</a></li>
+<li><a href="/post/2014-03-05-seismic-file-name-convections.md">地震数据的命名规则</a></li>
+<li><a href="/post/2013-07-23-breq-fast.md">IRIS 数据申请工具: BREQ_FAST</a></li>
+<li><a href="/post/2015-09-28-wilber3.md">用 Wilber 3 申请地震波形数据</a></li>
+<li><a href="/post/2016-12-24-sod-notes.md">SOD 入门教程</a></li>
+<li><a href="/post/2016-08-14-web-service-clients.md">使用 Web Services 获取地震数据</a></li>
+<li><a href="/post/2013-08-04-web-service-fetch-scripts.md">利用 Web Service Fetch scripts 申请和下载数据</a></li>
+<li><a href="/post/2016-05-26-iris-syngine.md">IRIS 的理论地震图生成引擎</a></li>
+<li><a href="/post/2014-01-24-download-data-from-iris-ftp.md">IRIS FTP 数据下载的几个方法</a></li>
+<li><a href="/post/2014-01-25-perl-script-for-downloading-iris-ftp-data.md">IRIS FTP 数据下载脚本</a></li>
+</ul>
+
+<h2 id="地球物理数据">地球物理数据</h2>
+
+<ul>
+<li><a href="/post/2013-09-30-global-relief-models.md">全球地形起伏数据总结</a></li>
+<li><a href="/post/2013-08-10-etopo5.md">全球地形起伏模型etopo5</a></li>
+<li><a href="/post/2013-08-11-etopo1.md">全球地形起伏模型 ETOPO1</a></li>
+<li><a href="/post/2013-08-11-etopo2.md">全球地形起伏模型 ETOPO2</a></li>
+<li><a href="/post/2013-08-11-gtopo30.md">全球数字高程模型 GTOPO30</a></li>
+<li><a href="/post/2013-09-29-srtm.md">高精度地形网格数据 SRTM</a></li>
+<li><a href="/post/2013-12-31-srtm30-plus.md">全球地形起伏数据：SRTM30_PLUS</a></li>
+<li><a href="/post/2015-04-07-srtm15-plus.md">全球地形起伏数据：SRTM15_PLUS</a></li>
+<li><a href="/post/2014-01-12-aster-gdem.md">全球数字高程数据：ASTER GDEM</a></li>
+<li><a href="/post/2014-02-05-gebco.md">全球水深数据 GEBCO</a></li>
+<li><a href="/post/2013-10-03-crust1.md">全球地壳模型 crust 1.0</a></li>
+<li><a href="/post/2013-11-23-china-administrative-areas-data.md">中国行政区划数据下载</a></li>
+<li><a href="/post/2014-05-17-ocean-floor-crustal-age.md">洋壳年龄数据</a></li>
+<li><a href="/post/2014-05-18-plate-boundary-datasets.md">板块边界数据集</a></li>
+</ul>
+
+<h2 id="其他-1">其他</h2>
+
+<ul>
+<li><a href="/post/2013-08-08-simple-guide-to-seismology.md">地震学入门简易指南</a></li>
+<li><a href="/post/2013-07-01-global-cmt.md">Global CMT 信息整理</a></li>
+<li><a href="/post/2014-01-15-global-earthquake-catalog-pde.md">全球地震目录 PDE</a></li>
+</ul>
+
+<h1 id="编程">编程</h1>
+
+<h2 id="linux">Linux</h2>
+
+<ul>
+<li><a href="/post/2014-07-15-linux-environment-for-seismology-research.md">用 CentOS 7 打造合适的科研环境</a></li>
+<li><a href="/post/2014-07-13-install-nvidia-drivers-under-linux.md">Linux 下安装 NVIDIA 显卡驱动</a></li>
+<li><a href="/post/2014-11-23-how-to-install-softwares-under-centos-7.md">CentOS 7 下的软件安装方法及策略</a></li>
+<li><a href="/post/2014-07-10-install-yong-chinese-input-method-under-centos-7.md">CentOS 7.0 下安装小小输入法</a></li>
+<li><a href="/post/2014-09-20-fcitx-for-centos7.md">CentOS 7 安装 fcitx 中文输入法</a></li>
+<li><a href="/post/2014-10-01-wps-office-for-centos7.md">CentOS 7 下安装 WPS Office</a></li>
+<li><a href="/post/2013-09-10-intel-non-commercial-software.md">Intel 非商业开发工具</a></li>
+<li><a href="/post/2014-07-16-uninstall-intel-parallel-studio-completely.md">彻底卸载 Intel Parallel Studio</a></li>
+<li><a href="/post/2013-07-11-texlive-install.md">Linux 下安装 TeXLive 2017</a></li>
+<li><a href="/post/2013-11-13-linux-endian.md">判断字节序的多种方法</a></li>
+<li><a href="/post/2014-02-28-xeCJK-mini-template.md">使用 xeCJK 解决中文问题的最小模板</a></li>
+<li><a href="/post/2014-03-07-how-to-write-makefile.md">跟我一起写 Makefile (PDF 重制版)</a></li>
+<li><a href="/post/2014-09-18-merge-pdf.md">Linux 下合并 PDF</a></li>
+<li><a href="/post/2013-07-11-firefox-java-plugin.md">Firefox 安装 Java 插件</a></li>
+</ul>
+
+<h2 id="python">Python</h2>
+
+<ul>
+<li><a href="/post/2014-08-23-python-send-mail.md">Python 发送邮件到 BREQ_FAST</a></li>
+<li><a href="/post/2013-10-04-pyenv.md">Python 多版本共存之 pyenv</a></li>
+<li><a href="/post/2014-05-14-anaconda.md">Python科学计算发行版&ndash;Anaconda</a></li>
+<li><a href="/post/2014-06-16-python-ustc-wlt-login.md">USTC 网络通登录脚本 Python 版</a></li>
+</ul>
+
+<h2 id="perl">Perl</h2>
+
+<ul>
+<li><a href="/post/2013-07-26-perl-send-email.md">Perl 发送邮件到 BREQ_FAST</a></li>
+<li><a href="/post/2013-07-30-perl-single-quoted-string-literals.md">Perl 的单引号字符直接量</a></li>
+<li><a href="/post/2013-10-13-perl-progressbar.md">Perl 进度条模块</a></li>
+<li><a href="/post/2013-10-16-perl-timespan.md">Perl 中的时间加法</a></li>
+<li><a href="/post/2013-11-03-plenv.md">Perl 多版本共存之 plenv</a></li>
+<li><a href="/post/2013-11-18-find-intersection-and-difference-of-two-arrays.md">Perl 如何找出两个数组的交集、并集</a></li>
+</ul>
+
+<h2 id="c">C</h2>
+
+<ul>
+<li><a href="/post/2013-08-04-leap-year.md">闰年的判断</a></li>
+<li><a href="/post/2014-01-18-calculate-jday.md">计算某日是一年中的第几天</a></li>
+</ul>
+
+<h2 id="优质软件">优质软件</h2>
+
+<ul>
+<li><a href="/post/2015-01-27-cpdf.md">强大的跨平台 PDF 处理工具：cpdf</a></li>
+<li><a href="/post/2013-09-27-imagemagick-convert.md">图像格式转换工具 convert</a></li>
+<li><a href="/post/2013-10-31-pdftk.md">PDF 合并和分割工具&ndash;PDFtk</a></li>
+</ul>
+
+<h2 id="macos">macOS</h2>
+
+<ul>
+<li><a href="/post/2018-01-29-macOS.md">用 Mac 打造合适的科研环境</a></li>
+</ul>
+
+<h1 id="其他-2">其他</h1>
+
+<h2 id="博客相关">博客相关</h2>
+
+<ul>
+<li><a href="/post/2013-06-21-hello-world.md">Hello World!</a></li>
+<li><a href="/post/2014-07-17-blog-hosts.md">博客托管的一些调整</a></li>
+</ul>
+
+<h2 id="杂类">杂类</h2>
+
+<ul>
+<li><a href="/post/2015-09-27-declarations.md">一些说明</a></li>
+<li><a href="/post/2015-04-11-my-referral-links.md">一些产品的推广链接</a></li>
+<li><a href="/post/2014-08-05-personal-preferences.md">我所使用的软件/服务列表</a></li>
+<li><a href="/post/2016-04-14-you-are-wanted.md">征集令</a></li>
+<li><a href="/post/2014-02-20-geo-software.md">地球物理相关软件</a></li>
+<li><a href="/post/2015-07-23-geophysicist.md">地球物理学家列表</a></li>
+<li><a href="/post/2016-07-04-journals.md">地学学术期刊</a></li>
+<li><a href="/post/2016-08-24-file-organization.md">文件管理与备份</a></li>
+</ul>
+
+  </div>
+</article>
+        </div>
+        
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'seisman';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  
+
+  
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:seisman.info@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/seisman" class="iconfont icon-github" title="github"></a>
+      <a href="https://movie.douban.com/people/131919859" class="iconfont icon-douban" title="douban"></a>
+  <a href="http://blog.seisman.info/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    
+      2013 - 
+    2018
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">SeisMan</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script><script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+<script type="text/javascript" src="/dist/even.min.js?v=3.0.1"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>
